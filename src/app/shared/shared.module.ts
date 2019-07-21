@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { BlankLayoutComponent } from './layout/blank-layout/blank-layout.component';
 import { FullLayoutComponent } from './layout/full-layout/full-layout.component';
 
@@ -10,7 +11,8 @@ import { FullLayoutComponent } from './layout/full-layout/full-layout.component'
     FullLayoutComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
 })
 export class SharedModule { }

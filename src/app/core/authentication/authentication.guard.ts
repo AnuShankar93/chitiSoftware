@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { AuthenticationService } from './authentication.service';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthenticationGuard implements CanActivate {
   constructor(
     private router: Router,
@@ -16,7 +13,6 @@ export class AuthenticationGuard implements CanActivate {
     if (this.authenticationService.isAuthenticated()) {
       return true;
     }
-
     console.log('Not authenticated, redirecting...');
     this.router.navigate(['/login'], {
       replaceUrl: true

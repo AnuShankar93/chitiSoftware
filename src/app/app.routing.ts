@@ -1,9 +1,8 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes} from '@angular/router';
 import {BlankLayoutComponent} from './shared/layout/blank-layout/blank-layout.component';
 import {FullLayoutComponent} from './shared/layout/full-layout/full-layout.component';
 
-const routes: Routes = [
+export const AppRoutes: Routes = [
   {
     path: '',
     component: FullLayoutComponent,
@@ -35,9 +34,3 @@ const routes: Routes = [
     redirectTo: '/404'
   }
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
