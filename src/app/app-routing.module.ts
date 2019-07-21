@@ -6,11 +6,27 @@ import {FullLayoutComponent} from './shared/layout/full-layout/full-layout.compo
 const routes: Routes = [
   {
     path: '',
+    component: FullLayoutComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/dashboard',
+        pathMatch: 'full'
+      },
+      {
+        path: 'dashboard',
+        loadChildren: () =>
+          import('./feature/feature.module').then(m => m.FeatureModule)
+      }
+    ]
+  },
+  {
+    path: '',
     component: BlankLayoutComponent,
     children: [
       {
         path: '',
-        loadChildren: () => import('./auth/auth.module').then(m => m.AutModule)
+        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
       }
     ]
   },
